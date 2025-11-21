@@ -8,21 +8,19 @@ import cors from 'cors'
 
 // TODO: complete me (CORS)
 
-dotenv.config(); // loads FRONTEND_URL from .env
+dotenv.config(); 
 
 console.log("frontend url:", process.env.FRONTEND_URL)
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
 const app = express();
 
-// allow this origin from frontend
+// allow origin
 app.use(cors( {
-    origin: process.env.FRONTEND_URL,  // e.g. "http://localhost:5173"
+    origin: process.env.FRONTEND_URL, 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// Handle preflight requests
 app.options('*', cors());
 
 
