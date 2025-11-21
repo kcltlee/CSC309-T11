@@ -11,6 +11,7 @@ import cors from 'cors'
 dotenv.config(); // loads FRONTEND_URL from .env
 
 console.log("frontend url:", process.env.FRONTEND_URL)
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
 const app = express();
 
